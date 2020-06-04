@@ -1,5 +1,50 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-const Square = () => <div>Tic Tac Toe Square</div>
+/*
+// this is how props look like and ...
+const props = {
+    onClick: () => "function",
+    value: "X"
+};
+// this is how destructuring looks like that we will pass as parameter in Square function...
+const { value } = props;
+*/
+
+const style = {
+    background: 'lightblue',
+    border: '2px solid darkblue',
+    fontSize: '30px',
+    fontWeight: '800',
+    cursor: 'pointer',
+    outline: 'none',
+    //margin: '10px 10px'
+    hover: {
+        background: 'red'
+      }
+};
+/* 
+        style is a default prop given by React, where we are now giving our created style object
+<button style={style} onClick={onClick}>
+*/
+const Square = ({value, onClick}) =>{
+    const [hover, setHover] = useState(false);
+    return (
+        <button 
+            style={{...style,
+                ...(hover ? style.hover : null)}} 
+            onClick={onClick}
+            onMouseEnter={()=>{
+                setHover(true);
+                //console.log("Entered");
+              }}
+              onMouseLeave={()=>{
+                setHover(false);
+                //console.log("Removed");
+              }}
+        >
+            {value}
+        </button>
+    );
+} 
 
 export default Square;
