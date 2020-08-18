@@ -1,0 +1,56 @@
+React Functional Components
+---------------------------
+import React from "react"
+import ReactDOM from "react-dom"
+
+function MyApp() {
+  return (
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+  )
+}
+
+ReactDOM.render(
+  <MyApp />,
+  document.getElementById("root")
+)
+
+
+React Functional Components Practice
+------------------------------------
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+function MyInfo(){
+  return (
+    <div>
+      <h1>Hi, this is Sadi!</h1>
+      <ul>
+        <li>I want to go to Bangladesh</li>
+        <li>Any time, whenever I want</li>
+        <li>At least once, before I die!</li>
+      </ul>
+    </div>
+  );
+}
+
+ReactDOM.render(
+  <MyInfo />,
+  document.getElementById('root')
+);
+
+
+Move Components into Separate Files
+------------------------------------
+1. create a file called MyInfo.js
+2. Import react there like, 
+	import React from "react"
+and also paste your MyInfo() function there
+and also, end of this file, add "export default MyInfo"
+3. Now import "import MyInfo from ./MyInfo" in your index.js file. Here ./ means look in the current directory for MyInfo.
+you can also put MyInfo.js file in a folder. Say, the folder name is "components", in that case you will
+have to import it as "import MyInfo from ./components/MyInfo"
+
