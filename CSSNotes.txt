@@ -1,0 +1,229 @@
+Cascading
+-----------------------------------------------------------------------------------------------
+Inline CSS has the most priority in terms of getting activated over internal and external ones.
+Also, the property that comes last overrides all of the same properties that came before it.
+For example, 
+	body {
+		color: green; 
+	     }
+if this property comes on internal and then comes to the inline, the inline will get the effect.
+Inline > Internal > External
+
+
+CSS Vocabulary
+-----------------------------------------------------------------------------------------------
+h1 {
+    font-size: 128px;
+}
+
+h1 {
+    font-size: small;
+}
+
+h1 {
+    font-size: 100%; --> means, same as default font hight
+    font-size: 200%; --> means, twice as default font hight		
+}
+
+
+Selects all children and grand-children:
+section b {
+    color: blueviolet;
+}
+
+
+Selects all DIRECT children:
+section > b {
+    color: blueviolet;
+}
+section > b, div > b {
+    color: blueviolet;
+}
+
+Class and ID
+-----------------------------------------------------------------------------------------------
+class can be applied to MULTIPLE elements and a SINGLE element can have MULTIPLE classes
+An ID CANNOT be used on MULTIPLE elements and an element CANNOT have MULTIPLE IDs
+
+Specificity
+-----------------------------------------------------------------------------------------------
+
+1. If there are multiple rules in a same specificity, the last rule will override
+
+body {
+    background-color: aqua;
+}
+body {
+    background-color: goldenrod;
+}
+
+Here, goldenrod will override aqua
+
+
+2. More specific rule will override
+
+html body {
+    background-color: aqua;
+}
+body {
+    background-color: goldenrod;
+}
+
+Here, aqua will override goldenrod
+
+3. Class will over rule below:
+
+.class {
+    background-color: red;
+}
+html body {
+    background-color: aqua;
+}
+body {
+    background-color: goldenrod;
+}
+
+Here, red will override all.
+
+
+4. class with more specificity will overrule below:
+html .class {
+    background-color: tomato;
+}
+.class {
+    background-color: goldenrod;
+}
+html body {
+    background-color: aqua;
+}
+body {
+    background-color: goldenrod;
+}
+
+Here, tomato will override all.
+
+5. ID will overrule all below:
+#id {
+    background-color: blueviolet;
+}
+html .class {
+    background-color: tomato;
+}
+.class {
+    background-color: goldenrod;
+}
+html body {
+    background-color: aqua;
+}
+body {
+    background-color: goldenrod;
+}
+
+Here, blueviolet will override all.
+
+6. Inline will OVERRULE everyone!
+
+More about specificity: https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity
+Specificity Calculator: http://specificity.keegan.st/
+
+
+Setting Widths and Heights in CSS
+-----------------------------------------------------------------------------------------------
+Inline Elements:
+width and height cannot be applied
+width of inline is dependent on its contents
+
+To add height and width to an inline element, do this:
+#inline * {
+    display: inline-block;
+    width: 200px;
+    height: 100px;
+}
+
+em: based on default font-size inherited by this element
+
+Block-level Elements:
+Always starts with a new line
+Takes the full width of its parent elemen that is available by default
+
+More about inline and block-level elements: https://www.w3schools.com/html/html_blocks.asp
+
+
+Length units in CSS
+-----------------------------------------------------------------------------------------------
+==> em
+
+browser default fontsize = 16px
+.bar {
+    width: 20em; ==> 20 * 16 = 320px
+}
+.progress {
+    width: 10em; ==> 10 * 16 = 160px
+}
+
+.bar {
+    font-size: 8px; // here, we override browser default font size
+    width: 20em;    // So, here we have 20 * 8 = 160px!
+}
+.progress {
+    font-size: 16px;
+    width: 10em;
+}
+
+==> rem : Need to learn about it
+
+Colors in CSS
+-----------------------------------------------------------------------------------------------
+==> No need to do anything with it
+
+CSS Padding
+-----------------------------------------------------------------------------------------------
+padding: 10px // top-down left-right each will have 10px padding
+padding: 10px 20px // top-down = 10px;  left-right = 20px of padding
+padding: 1px 2px 3px 4px // clock-wise move top > right > bottom > left
+
+when we add padding, the original width and height increases. To keep it to its original size,
+we have to add:
+box-sizing: border-box;
+**NEED EXPERIMENT WITH box-sizing
+
+CSS Borders
+-----------------------------------------------------------------------------------------------
+==> No need to do anything with it
+
+CSS Margins
+-----------------------------------------------------------------------------------------------
+==> No need to do anything with it
+
+CSS Box Model
+-----------------------------------------------------------------------------------------------
+==> No need to do anything with it
+
+CSS Visibility
+-----------------------------------------------------------------------------------------------
+display: none; ==> the element will be removed from DOM
+visibility: hidden; ==> it will be there in DOM but in an invisible state
+opacity: 0; ==> it will be there in DOM but in an invisible state
+
+CSS Fonts
+-----------------------------------------------------------------------------------------------
+==> No need to do anything with it
+
+CSS Flow
+-----------------------------------------------------------------------------------------------
+Inline element: will take the amount of space of its contents. They are stacked horizontally. 
+If there is no space remain in the window, its contents will go to the next line! 
+They don't take width and height properties!
+anchor <a>, <span>, <b> <i> all are inline elements..
+
+display: block ==> makes an inline element behave like a block element
+display: inline-block ==> to add heigh and width to an inline element
+
+Block elements: are stacked vertically by default. Take 100% width of their parent elements! They will be stacked in 
+the order they are found in the HTML. They can take width and height. They will always stack vertically even if
+theoretically they have space to go side by side. 
+<div> <h1 - h6> <p> all are block elements.
+
+display: inline ==> makes a block element behave like an inline element
+
+

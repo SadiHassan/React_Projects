@@ -11,9 +11,9 @@ const { value } = props;
 */
 
 const style = {
-    background: 'lightblue',
+    background: 'lightgray',
     border: '2px solid darkblue',
-    fontSize: '30px',
+    fontSize: '5rem',
     fontWeight: '800',
     cursor: 'pointer',
     outline: 'none',

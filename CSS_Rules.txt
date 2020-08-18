@@ -1,0 +1,166 @@
+
+#Select all "b" who are children and grandchildren of "section"
+section  b{
+    color: blueviolet;
+}
+
+#Select all "b" who are DIRECT children of "section"
+section > b{
+    color: blueviolet;
+}
+
+#Select all "b" who are DIRECT children of "section" and "div"
+section > b, div > b {
+    color: blueviolet;
+}
+
+# b that is direct child of a P which is direct child of id #classes
+# and b that is direct child of li which is a child of id #ids
+#classes > P > b, #ids li > b {
+    color: goldenrod;
+}
+
+********************************************************************************************
+Specificity
+********************************************************************************************
+useful links:
+1. Mozilla: https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity
+2. Specificity Calculator: https://specificity.keegan.st/
+
+0. cascade means bottom part rules of a css file will override top part rules
+
+1. Inline will override all
+2. id will override all below
+#id {
+    background-color: blueviolet;
+}
+
+3. specific class (children or grandchildren of something) will override all below
+html .class {
+    background-color: tomato;
+}
+
+4. class will override all below
+.class {
+    background-color: goldenrod;
+}
+
+5. specific element which is child or grandchild of something will override unspecified rule of that element
+html body {
+    background-color: aqua;
+}
+
+6. weakest one with least specificity
+body {
+    background-color: goldenrod;
+}
+
+
+********************************************************************************************
+Length units in CSS
+********************************************************************************************
+1. em: relative to default font size of root (<html>) provided by the browser
+--> it can change if font-size is changed manually down the road
+
+Say, default font-size = 16px
+.bar {
+    width: 20em; = 20em * 16px = 320px
+}
+
+.bar {
+    font-size: 8px;
+    width: 20em; = 20em * 8px = 160px
+}
+.progress {
+    font-size: 16px;
+    width: 10em; = 10em * 16px = 160px
+}
+
+2. rem: relative to ONLY default font size of root (<html>) provided by the browser
+--> it will NEVER change if font-size is changed manually down the road
+--> there will be no change of rem after changing font-size to 8px or 16px etc...
+
+3. percentage
+
+********************************************************************************************
+Color in CSS
+********************************************************************************************
+/*  COLOR NAMES LIST: 
+    https://www.w3schools.com/cssref/css_colors.asp 
+    */
+
+/*  COLOR TYPES: 
+    https://www.w3schools.com/cssref/css_colors_legal.asp 
+    */
+
+/*  ONLINE COLOR TOOLS: 
+    https://htmlcolorcodes.com/
+    https://coolors.co     
+    */
+
+********************************************************************************************
+Padding
+********************************************************************************************
+when padding is added, container size increases. To keep the container of its original size,
+we can add "box-sizing: border-box" property.
+
+********************************************************************************************
+Visibility
+********************************************************************************************
+.hidden {
+    /* display: none; */ ------------> as if the element was never there
+    /* visibility: hidden; */--------> the element is there in the content flow, just invisible
+    /* opacity: .5; */---------------> the element is there in the content flow, just invisible
+}
+
+********************************************************************************************
+Inline and Block Level Element
+********************************************************************************************
+Block level element ---> by default takes width of its PARENT element
+
+# https://www.w3schools.com/html/html_blocks.asp
+--> Inline elements take only necessary space to fill up
+--> Block level elements goes to new line by default
+
+--> display: inline ---> to use Block level element as inline element
+--> display: block ---> to use Inline element as block level element
+--> to change height-weidth of inline element, need to add property "display: inline-block"
+
+********************************************************************************************
+Float and Clear
+********************************************************************************************
+float: left or right --> positions an element to the left or right of it's container
+clear: left, right, both --> when an element is float left or right, the immediate next element 
+goes behind it and becomes invisible. To remedy this, clear plays the role. clear: left, right, both
+clears the row it hides behind and places the element to the next line to become visible.
+
+********************************************************************************************
+Positions property in CSS
+********************************************************************************************
+position: relative --> positions an element relative to the position of it's natural flow.
+position: absolute --> positions an element in relation to it's ancestor that is NOT static!
+(by default, all elements are static), it ALTERS the position of an element.
+position: fixed --> positions an element relative to the browser window.
+
+Extra info on position property
+https://www.w3schools.com/cssref/pr_class_position.asp
+    
+
+********************************************************************************************
+Pseudo Classes and Elements
+********************************************************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
