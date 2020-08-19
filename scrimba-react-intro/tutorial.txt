@@ -1,3 +1,9 @@
+To run a react app to another machine:
+
+npm install
+npm start
+---------------------------------------------------------------------------------
+
 React Functional Components
 ---------------------------
 import React from "react"
@@ -53,4 +59,7 @@ and also, end of this file, add "export default MyInfo"
 3. Now import "import MyInfo from ./MyInfo" in your index.js file. Here ./ means look in the current directory for MyInfo.
 you can also put MyInfo.js file in a folder. Say, the folder name is "components", in that case you will
 have to import it as "import MyInfo from ./components/MyInfo"
+
+React Parent/Child Component
+------------------------------------
 
