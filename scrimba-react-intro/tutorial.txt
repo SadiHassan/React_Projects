@@ -60,6 +60,174 @@ and also, end of this file, add "export default MyInfo"
 you can also put MyInfo.js file in a folder. Say, the folder name is "components", in that case you will
 have to import it as "import MyInfo from ./components/MyInfo"
 
+<<<<<<< HEAD
+React Parent/Child Components
+------------------------------
+### App.js --> 
+import React from "react"
+import Footer from "./Footer"
+
+function App() {
+    return (
+        <div>
+            <Header />
+            <MainContent />
+            <Footer />
+        </div>
+    )
+}
+
+export default App
+
+### Footer.js --->
+import React from "react"
+
+function Footer() {
+    return (
+        <footer>
+            <h3>This is my footer element</h3>
+        </footer>
+    )
+}
+
+export default Footer
+
+## index.js -->
+import React from "react"
+import ReactDOM from "react-dom"
+
+import App from "./App"
+
+ReactDOM.render(<App />, document.getElementById("root"))
+
+### index.html --->
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="root"></div>
+        <script src="index.pack.js"></script>
+    </body>
+</html>
+
+
+12. React Parent/Child Components Practice
+-------------------------------------------
+
+index.js
+--------
+import React from "react"
+import ReactDOM from "react-dom"
+
+import App from "./App"
+
+ReactDOM.render(<App />, document.getElementById("root"))
+
+App.js
+------
+import React from "react"
+
+import Header from "./components/Header"
+import MainContent from "./components/MainContent"
+import Footer from "./components/Footer"
+
+function App() {
+    return (
+        <div>
+            <Header />
+            <MainContent />
+            <Footer />
+        </div>
+    )
+}
+
+export default App
+
+Header.js
+----------
+import React from "react"
+
+function Header() {
+    return (
+        <header>This is the header</header>
+    )
+}
+
+export default Header
+
+MainContent.js
+---------------
+import React from "react"
+
+function MainContent() {
+    return (
+        <main>This is the main section</main>
+    )
+}
+
+export default MainContent
+
+Footer.js
+------------
+import React from "react"
+
+function Footer() {
+    return (
+        <footer>This is the footer</footer>
+    )
+}
+
+export default Footer
+
+==============================
+13. React To-Do App: Phase-1
+==============================
+App.js
+-------
+import React from "react"
+
+function App() {
+    return (
+        <div>
+            <input type="checkbox" />
+            <p>Placeholder text here</p>
+            
+            <input type="checkbox" />
+            <p>Placeholder text here</p>
+            
+            <input type="checkbox" />
+            <p>Placeholder text here</p>
+            
+            <input type="checkbox" />
+            <p>Placeholder text here</p>
+        </div>
+    )
+}
+
+export default App
+
+==================================
+14. Styling React With CSS classes
+==================================
+Add className = "some class" to add a class in an element (not component)
+Example: <header className="navbar">This is the header</header>
+This class will be declared in style.css.
+
+If you want to add className in a React component (for example, in <App />), things are a bit different.
+We will know (or have to know) about this later!
+
+=================
+15. Some Caveats
+=================
+Instructor talked about his style of writing code (e.g. not using semi-colon or function declaration style etc...)
+
+
+===============================
+16. JSX to Javascript and Back
+===============================
+=======
 React Parent/Child Component
 ------------------------------------
 
+>>>>>>> 2036b04de6bbc0e781c1e2d51ed6fb382228821c
