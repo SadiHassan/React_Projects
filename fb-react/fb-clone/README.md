@@ -93,9 +93,9 @@ BEM Naming Convensions
 -------------
 fb-backend:
 --------------
-npm init (then press enter for other options, only give server.js as entry point)
+#npm init (then press enter for other options, only give server.js as entry point)
 
-npm i express mongoose cors multer multer-gridfs-storage  gridfs-stream  body-parser  path  pusher
+#npm i express mongoose cors multer multer-gridfs-storage  gridfs-stream  body-parser  path  pusher
 
 Once everything installed, add "type": "module", in package.json
 
