@@ -69,6 +69,8 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 ####### Firebase Stuff #############
 
+# npm i firebase
+
 var firebaseConfig = {
     apiKey: "AIzaSyAuD4WlpPPKYKIT1dVCDtHZ_kkeQhDBUF0",
     authDomain: "discord-clone-96b4d.firebaseapp.com",
