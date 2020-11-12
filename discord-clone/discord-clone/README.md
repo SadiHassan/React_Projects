@@ -82,3 +82,13 @@ var firebaseConfig = {
     measurementId: "G-10887VMLKN"
   };
   
+<div className="app">
+        {user ? (
+          <>
+            <Sidebar />
+            <Chat />
+          </>
+        ) : (
+            <Login />
+        )}
+    </div>
