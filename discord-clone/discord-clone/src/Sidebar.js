@@ -21,13 +21,13 @@ function Sidebar() {
     const user = useSelector(selectUser);
     const [channels, setChannels] = useState([])
     useEffect(() => {
-        db.collection('channels').onSnapshot(snapshot => ( 
+        db.collection('channels').onSnapshot(snapshot => {
             setChannels(snapshot.docs.map(doc => ({
                         id: doc.id,
                         channel: doc.data(),
                     })))
-                )
-            );
+                
+            });
         }, [])
     
     const handleAddChannel = () => {

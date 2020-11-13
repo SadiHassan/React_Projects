@@ -11,14 +11,17 @@ import EmojiEmotionsIcon from '@material-ui/icons/EmojiEmotions'
 import { useSelector } from 'react-redux'
 import { selectUser } from './features/userSlice'
 import { selectChannelId, selectChannelName } from './features/appSlice'
+//import { stateChannel } from './features/appSlice'
 
 
 function Chat() {
-
+    //console.log('stateChannel')
+    //console.log(stateChannel)
     const user = useSelector(selectUser);
     const channelId = useSelector(selectChannelId);
     const channelName = useSelector(selectChannelName)
     
+    console.log('Inside: Chat.js')
     console.log(user)
     console.log('channelId: ' + channelId)
     console.log('channelName: ' + channelName)
