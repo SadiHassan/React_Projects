@@ -8,7 +8,8 @@ function SidebarChannel({id, channelName}) {
     const dispatch = useDispatch();
 
     return (
-        <div className = 'sidebarChannel' onClick={() => 
+        <div className = 'sidebarChannel' 
+        onClick={() => 
             dispatch(
                 setChannelInfo({
                     channelId: id,
