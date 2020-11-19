@@ -34,8 +34,10 @@
 .header__search > input {
     background-color: transparent;
     border: none;
+    outline: none;
     text-align: center;
     min-width: 35vw;
+    color: white;
 }
 
 

@@ -1,0 +1,15 @@
+#video-grid {
+    display: flex;
+    justify-content: center;
+}
+
+video {
+    margin-left: 25em;
+    height: 400px;
+    width: 400px;
+    border-radius: 999px;
+    object-fit: cover;
+    opacity: 1.0;
+    border: 5px solid rgb(115, 167, 245);
+    /*box-shadow: 5px 10px #888888;*/
+}
