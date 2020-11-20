@@ -1,6 +1,6 @@
 .login {
     height: 100vh;
-    background: #f8f8f8;
+    background: #a6d1f5; /*#f8f8f8;*/
     display: grid;
     place-items: center;
 }
