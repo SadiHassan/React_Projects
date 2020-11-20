@@ -77,3 +77,7 @@ https://www.youtube.com/watch?v=Oo4ziTddOxs
 
 npm install @material-ui/core
 npm install @material-ui/icons
+
+npm i firebase
+npm install -g firebase-tools
+npm install react-router-dom
