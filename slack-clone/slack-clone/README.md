@@ -85,3 +85,10 @@ npm install react-router-dom
 
 # Beautiful usefull links
 https://usehooks.com/
+
+# Firebase Deploy
+firebase login
+firebase init
+what do u want to use as ur public directory? Answer--> build
+npm run build
+firebase deploy
