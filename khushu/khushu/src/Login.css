@@ -1,0 +1,161 @@
+@keyframes move-background {
+    from {
+      -webkit-transform: translate3d(0px, 0px, 0px);
+    }
+    to {
+      -webkit-transform: translate3d(1000px, 0px, 0px);
+    }
+  }
+  @-webkit-keyframes move-background {
+    from {
+      -webkit-transform: translate3d(0px, 0px, 0px);
+    }
+    to {
+      -webkit-transform: translate3d(1000px, 0px, 0px);
+    }
+  }
+  @-moz-keyframes move-background {
+    from {
+      -webkit-transform: translate3d(0px, 0px, 0px);
+    }
+    to {
+      -webkit-transform: translate3d(1000px, 0px, 0px);
+    }
+  }
+  @-webkit-keyframes move-background {
+    from {
+      -webkit-transform: translate3d(0px, 0px, 0px);
+    }
+    to {
+      -webkit-transform: translate3d(1000px, 0px, 0px);
+    }
+  }
+  .background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+  /*https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png*/
+  .stars {
+    background: black url('./img/stars.png') repeat;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    z-index: 0;
+  }
+  /* https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/twinkling.png */
+  .twinkling {
+    width: 10000px;
+    height: 100%;
+    background: transparent url("./img/twinkling.png") repeat;
+    background-size: 1000px 1000px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    -moz-animation: move-background 70s linear infinite;
+    -ms-animation: move-background 70s linear infinite;
+    -o-animation: move-background 70s linear infinite;
+    -webkit-animation: move-background 70s linear infinite;
+    animation: move-background 70s linear infinite;
+  }
+  
+  /* https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/clouds_repeat.png */
+  .clouds {
+    width: 10000px;
+    height: 100%;
+    background: transparent url("./img/clouds_repeat.png") repeat;
+    background-size: 1000px 1000px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 3;
+    -moz-animation: move-background 150s linear infinite;
+    -ms-animation: move-background 150s linear infinite;
+    -o-animation: move-background 150s linear infinite;
+    -webkit-animation: move-background 150s linear infinite;
+    animation: move-background 150s linear infinite;
+  }
+  
+  img {
+    height: 40vh;
+    width: 60vh;
+    position: absolute;
+    z-index: 3;
+    right: 20px;
+  }
+
+  .ayat {
+      position: absolute;
+      z-index: 10;
+      color: rgb(84, 164, 230);
+      font-size: 1.5em;
+      font-weight: bold;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-style: italic;
+  }
+
+  blockquote {
+    z-index: 999;
+    background: #f9f9f900;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    quotes: "\201C""\201D""\2018""\2019";
+  }
+  blockquote:before {
+    color: rgb(211, 32, 32);
+    content: open-quote;
+    font-size: 3em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+  }
+
+  blockquote:after {
+    color: rgb(211, 32, 32);
+    content: close-quote;
+    font-size: 3em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+  }
+
+
+  blockquote p {
+    display: inline;
+  }
+
+  blockquote p > span{
+    font-size: 0.65em !important;
+    color: rgb(160, 157, 157);
+  }
+
+  .enter__button {
+    position: absolute;
+    z-index: 9999;
+    margin-top: 40%;
+    margin-left: 35%;
+    width: 400px;
+    height: 50px;
+    color: white;
+    background-color: rgb(44, 43, 88);
+    border-color: transparent;
+    border: none;
+    border-style: none;
+    font-size: medium;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .enter__button:hover {
+      cursor: pointer;
+      opacity: 0.7;
+  }
+  
