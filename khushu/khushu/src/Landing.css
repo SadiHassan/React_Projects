@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@900&display=swap');
+
 @keyframes move-background {
     from {
       -webkit-transform: translate3d(0px, 0px, 0px);
@@ -100,6 +102,7 @@
       font-weight: bold;
       font-family: Georgia, 'Times New Roman', Times, serif;
       font-style: italic;
+      /*text-shadow: rgb(113, 208, 245) 1px 0 1px;*/
   }
 
   blockquote {
@@ -132,19 +135,40 @@
     display: inline;
   }
 
-  blockquote p > span{
+  .reference{
     font-size: 0.65em !important;
     color: rgb(160, 157, 157);
   }
 
-  .enter__button {
+  
+
+  .highlight {
+    font-size: 1em;
+    color: rgb(255, 255, 255);
+  }
+  
+  .brand__position {
+    /*border-left: 2px solid rgb(20, 94, 206);
+    border-right: 2px solid rgb(20, 94, 206);*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: calc(50vw - 150px);
+    margin-top: calc(50vh - 0px);
+    flex-direction: column;
+    background-color: transparent;
     position: absolute;
     z-index: 9999;
-    margin-top: 40%;
-    margin-left: 35%;
-    width: 400px;
+    width: 300px;
+    height: 270px;
+    /*transform: translate(-50%, -50%);*/
+  }
+
+  .enter__button {
+    width: 300px;
     height: 50px;
     color: white;
+    outline: none;
     background-color: rgb(44, 43, 88);
     border-color: transparent;
     border: none;
@@ -152,10 +176,29 @@
     font-size: medium;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
+    align-self: flex-end;
   }
 
   .enter__button:hover {
       cursor: pointer;
       opacity: 0.7;
   }
-  
+  .logo__slogan {
+    margin: 0 auto;
+    font-family: 'Big Shoulders Stencil Display', cursive;
+    font-size: 4em;
+    font-weight: bold;
+    color: rgba(234, 244, 250, 0.966);
+    text-shadow: rgb(113, 208, 245) 1px 0 1px;
+    /*background-color: teal;*/
+ }
+
+ .tag__line {
+   position: absolute;
+   margin-top: 25%;
+   margin-left: 9%;
+   font-size: 1.2em;
+   font-weight: 600;
+   color: rgb(243, 14, 14);
+   /*background-color: violet;*/
+ }

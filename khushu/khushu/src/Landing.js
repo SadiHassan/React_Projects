@@ -1,12 +1,15 @@
 import React from 'react'
-import './Login.css'
+import './Landing.css'
 import moonImage from './img/moon.jpg'; 
+import logo from './img/Khushu.jpg';
+import { useHistory } from "react-router-dom";
 
-function Login() {
+function Landing() {
     
     let imgSrcOriginal = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/moon2.png"
     let imgSrc = "https://media1.s-nbcnews.com/j/newscms/2019_37/3005121/190910-full-moon-ac-1020p_f2429d427c151e74602f31e914fd95a5.fit-760w.jpg"
-    
+    const history = useHistory();
+
     return (
         <div className="background-container">
             <img src={moonImage} alt="" />
@@ -16,33 +19,22 @@ function Login() {
                 <blockquote>
                         <p>
                         O You who have beleived,<br/> 
-                        seek help through patience and prayer. <br/>
+                        seek help through <span className="highlight">patience</span> and 
+                        <span className="highlight"> prayer</span>. <br/>
                         Indeed, Allah is with the patient ...
-                        <span> ( Quran 2:153 )</span>
+                        <span className="reference"> ( Quran 2:153 )</span>
                         </p>
                 </blockquote>       
             </div>
-            <div>
-                <button className="enter__button">ENTER</button>
+            <div className="brand__position">
+                <div className="logo__slogan">
+                    K H U S H U
+                </div>
+                <div className="tag__line">
+                    Your salat management tool
+                </div>
+                <button className="enter__button" onClick={() => history.push('/Home')}>ENTER</button>
             </div>
-            
-        
-        {/* 
-            
-            <p>
-                        O YOU WHO HAVE BELEIVED,<br/> 
-                        SEEK HELP THROUGH PATIENCE AND PRAYER. <br/>
-                        INDEED, ALLAH IS WITH THE PATIENT.
-                        (Quran 2:153)
-                        </p>    
-                
-                
-                
-                
-                
-            </div>
-        </div>
-        */}
         </div>
         
         
@@ -55,4 +47,4 @@ function Login() {
     )
 }
 
-export default Login
+export default Landing
