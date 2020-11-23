@@ -1,0 +1,93 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    background-image: url('./img/header_bg.png');
+    width: 100%;
+}
+
+.header__left {
+    /*background-color: rgb(42, 48, 54);*/
+    flex: 0.5;
+    height: 4.5em;
+}
+
+.header__right {
+    /*background-color: rgb(42, 48, 54);*/
+    flex: 0.8;
+    display: flex;
+    justify-content: center;
+}
+
+.header__logo__slogan {
+    margin-left: 10px;
+    font-family: 'Big Shoulders Stencil Display', cursive;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 1.0);
+    text-shadow: rgb(113, 208, 245) 1px 0 1px;
+ }
+
+ .header__tag__line {
+   position: absolute;
+   margin-top: 0;
+   margin-left: 10px;
+   font-size: 1.0em;
+   font-weight: 600;
+   color: rgb(243, 14, 14);
+   /*background-color: white;*/
+ }
+
+ .header__link__button {
+    margin-left: 10px;
+    margin-top: 10px;
+    flex: 0.7;
+    height: 2.5em;
+    width: 7em;
+    border-color: transparent;
+    border: none;
+    border-style: none;
+    font-size: medium;
+    font-weight: 550;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(211, 231, 248);
+    border-radius: 10px;
+ }
+
+ .header__link__button:hover {
+     cursor: pointer;
+     background-color: rgb(165, 212, 253);
+ }
+
+ .header__login__button {
+    flex: 0.3;
+    align-self: flex-end;
+    margin-top: 10px;
+    height: 2.5em;
+    width: 10em;
+    border-color: transparent;
+    border: none;
+    border-style: none;
+    font-size: medium;
+    font-weight: 550;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(248, 96, 8);
+    color: white;
+    border-radius: 10px;
+ }
+
+ .header__login__button:hover {
+     cursor: pointer;
+     background-color: rgb(228, 122, 65);
+ }
+ @media (max-width: 710px) {
+    .header {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header__link__button {
+        margin-left: 10px;
+        margin-top: 30px;
+    }
+    
+ }

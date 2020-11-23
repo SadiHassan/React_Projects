@@ -50,6 +50,11 @@
     display: block;
     z-index: 0;
   }
+  
+  :root {
+    --cloud-speed: 30s;
+    --star-speed: 70s;
+  }
   /* https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/twinkling.png */
   .twinkling {
     width: 10000px;
@@ -61,13 +66,15 @@
     top: 0;
     bottom: 0;
     z-index: 2;
-    -moz-animation: move-background 70s linear infinite;
-    -ms-animation: move-background 70s linear infinite;
-    -o-animation: move-background 70s linear infinite;
-    -webkit-animation: move-background 70s linear infinite;
-    animation: move-background 70s linear infinite;
+    -moz-animation: move-background var(--star-speed) linear infinite;
+    -ms-animation: move-background var(--star-speed) linear infinite;
+    -o-animation: move-background var(--star-speed) linear infinite;
+    -webkit-animation: move-background var(--star-speed) linear infinite;
+    animation: move-background var(--star-speed) linear infinite;
   }
   
+  
+
   /* https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/clouds_repeat.png */
   .clouds {
     width: 10000px;
@@ -79,11 +86,11 @@
     top: 0;
     bottom: 0;
     z-index: 3;
-    -moz-animation: move-background 150s linear infinite;
-    -ms-animation: move-background 150s linear infinite;
-    -o-animation: move-background 150s linear infinite;
-    -webkit-animation: move-background 150s linear infinite;
-    animation: move-background 150s linear infinite;
+    -moz-animation: move-background var(--cloud-speed) linear infinite;
+    -ms-animation: move-background var(--cloud-speed) linear infinite;
+    -o-animation: move-background var(--cloud-speed) linear infinite;
+    -webkit-animation: move-background var(--cloud-speed) linear infinite;
+    animation: move-background var(--cloud-speed) linear infinite;
   }
   
   img {
@@ -196,9 +203,10 @@
  .tag__line {
    position: absolute;
    margin-top: 25%;
-   margin-left: 9%;
+   margin-left: 25%;
    font-size: 1.2em;
    font-weight: 600;
    color: rgb(243, 14, 14);
-   /*background-color: violet;*/
+   /*text-shadow: rgb(255, 255, 245) 1px 0 1px;*/
+   /*background-color: rgba(255, 255, 245, 0.9);*/
  }

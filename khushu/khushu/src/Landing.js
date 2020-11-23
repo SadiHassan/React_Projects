@@ -2,7 +2,7 @@ import React from 'react'
 import './Landing.css'
 import moonImage from './img/moon.jpg'; 
 import logo from './img/Khushu.jpg';
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 
 function Landing() {
     
@@ -31,9 +31,12 @@ function Landing() {
                     K H U S H U
                 </div>
                 <div className="tag__line">
-                    Your salat management tool
+                    Rush to success
                 </div>
-                <button className="enter__button" onClick={() => history.push('/Home')}>ENTER</button>
+                <Link to="/home">
+                    <button className="enter__button" >ENTER</button>
+                </Link>
+                
             </div>
         </div>
         
