@@ -193,7 +193,8 @@
   .logo__slogan {
     margin: 0 auto;
     font-family: 'Big Shoulders Stencil Display', cursive;
-    font-size: 4em;
+    /*font-family: Georgia, 'Times New Roman', Times, serif;*/
+    font-size: 3.5em;
     font-weight: bold;
     color: rgba(234, 244, 250, 0.966);
     text-shadow: rgb(113, 208, 245) 1px 0 1px;

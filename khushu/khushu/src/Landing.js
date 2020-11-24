@@ -31,7 +31,7 @@ function Landing() {
                     K H U S H U
                 </div>
                 <div className="tag__line">
-                    Rush to success
+                    [ Rush to success ]
                 </div>
                 <Link to="/home">
                     <button className="enter__button" >ENTER</button>

@@ -2,24 +2,28 @@ import React from 'react'
 import './Header.css'
 import { Link } from "react-router-dom";
 function Header() {
-    var navToggle = ''
+    //var navToggle = ''
     var navWrapper = ''
     document.onload = () => {
-        navToggle = document.querySelector(".nav__toggle");
+        //navToggle = document.querySelector(".nav__toggle");
         navWrapper = document.querySelector(".nav__wrapper");
     }
-    navToggle.addEventListener("click", function () {
-    alert("clicked!");
-    if (navWrapper.classList.contains("active")) {
-        this.setAttribute("aria-expanded", "false");
-        this.setAttribute("aria-label", "menu");
-        navWrapper.classList.remove("active");
-    } else {
-        navWrapper.classList.add("active");
-        this.setAttribute("aria-label", "close menu");
-        this.setAttribute("aria-expanded", "true");
-    }
-    });
+
+    const navToggle = () => {
+      //navToggle.addEventListener("click", function () {
+      //alert("clicked!");
+      let navToggle2 = document.querySelector(".nav__toggle");
+      navWrapper = document.querySelector(".nav__wrapper");
+      if (navWrapper.classList.contains("active")) {
+        navToggle2.setAttribute("aria-expanded", "false");
+        navToggle2.setAttribute("aria-label", "menu");
+          navWrapper.classList.remove("active");
+      } else {
+          navWrapper.classList.add("active");
+          navToggle2.setAttribute("aria-label", "close menu");
+          navToggle2.setAttribute("aria-expanded", "true");
+      }
+      };
     
     
     return (
@@ -31,7 +35,7 @@ function Header() {
         </div>
         <div className="site-header__middle">
           <nav className="nav">
-            <button className="nav__toggle" aria-expanded="false" type="button">
+            <button className="nav__toggle" aria-expanded="false" type="button" onClick = {navToggle}>
               menu
             </button>
             <ul className="nav__wrapper">
