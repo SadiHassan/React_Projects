@@ -77,3 +77,4 @@ Login page animation: https://codepen.io/agoodwin/pen/NMJoER
 
 ### Installations
 npm install react-router-dom
+npm install react-infinite-scroll-component

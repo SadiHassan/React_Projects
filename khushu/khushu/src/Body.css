@@ -3,5 +3,10 @@
     height: auto;
     margin-left: 10%;
     margin-top: 5px;
-    background-color: lightseagreen;
+    background-color: rgb(204, 212, 212);
+}
+
+.salat__table {
+    width: 50%;
+    background-color: rgb(243, 239, 239);
 }
