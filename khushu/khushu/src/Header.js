@@ -9,19 +9,19 @@ function Header() {
         navWrapper = document.querySelector(".nav__wrapper");
     }
 
-    const navToggle = () => {
-      //navToggle.addEventListener("click", function () {
-      //alert("clicked!");
+    const navToggle = () => { 
       let navToggle2 = document.querySelector(".nav__toggle");
       navWrapper = document.querySelector(".nav__wrapper");
       if (navWrapper.classList.contains("active")) {
         navToggle2.setAttribute("aria-expanded", "false");
         navToggle2.setAttribute("aria-label", "menu");
-          navWrapper.classList.remove("active");
+        navToggle2.classList.toggle("change")
+        navWrapper.classList.remove("active");
       } else {
           navWrapper.classList.add("active");
           navToggle2.setAttribute("aria-label", "close menu");
           navToggle2.setAttribute("aria-expanded", "true");
+          navToggle2.classList.toggle("change")
       }
       };
     
@@ -29,27 +29,43 @@ function Header() {
     return (
         
     <header className="site-header">
+      
       <div className="wrapper site-header__wrapper">
+        
         <div className="site-header__start">
-          <a href="#" className="brand">Brand</a>
+          <div className="brand">KHUSHU</div>
+          <div className="header__tag__line">Rush to success</div>
         </div>
+        
         <div className="site-header__middle">
           <nav className="nav">
             <button className="nav__toggle" aria-expanded="false" type="button" onClick = {navToggle}>
-              menu
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
             </button>
             <ul className="nav__wrapper">
-              <li className="nav__item"><a href="#">Home</a></li>
-              <li className="nav__item"><a href="#">About</a></li>
-              <li className="nav__item"><a href="#">Services</a></li>
-              <li className="nav__item"><a href="#">Hire us</a></li>
-              <li className="nav__item"><a href="#">Contact</a></li>
+              <Link style={{ textDecoration: 'none', listStyleType: 'none' }} to="/lectures">
+                <li className="nav__item"><a href="#">Lectures</a></li>
+              </Link>
+
+              <Link style={{ textDecoration: 'none', listStyleType: 'none' }} to="/books">
+                <li className="nav__item"><a href="#">Books</a></li>
+              </Link>
+              
+              <Link style={{ textDecoration: 'none', listStyleType: 'none' }} to="/feedback">
+                <li className="nav__item"><a href="#">Feedback</a></li>
+              </Link>
+              
             </ul>
           </nav>
         </div>
+        
+        
         <div className="site-header__end">
-          <a className="button" href="#">Sign in</a>
+          <button className="button">Login / Join</button>
         </div>
+      
       </div>
     </header>
     
