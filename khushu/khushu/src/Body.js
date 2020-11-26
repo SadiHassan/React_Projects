@@ -7,9 +7,14 @@ import './Body.css'
 const style = {
     height: 30,
     border: "1px solid green",
-    margin: 6,
-    padding: 8,
-    width: 400
+    margin: 1,
+    padding: 0,
+    width: 400,
+  };
+
+const style2 = {
+    height: 30,
+    margin: 1,
   };
 
 //function Body() {
@@ -40,7 +45,7 @@ class Body extends React.Component{
 
         setTimeout(() => {
             const Data2 = {
-                task_list : this.state.items.task_list.concat(["20201127", "2", "2", "2", "2", "2"])
+                task_list : this.state.items.task_list.concat(Array(["20201127", "Fri", "2", "2", "2", "2", "2"]))
             } 
             this.setState({
                 //items: this.state.items.task_list.concat(["20201127", "2", "2", "2", "2", "2"])
@@ -50,13 +55,9 @@ class Body extends React.Component{
     };
     print = () => {
         console.log(this.state.items.task_list);
-        
-        console.log(this.state.items);
-        //console.log(this.state.items.task_list.length);
     }
     render(){
     return (
-        
         <div className="body">
             {this.print()}
             <div className="salat__table">
@@ -68,18 +69,27 @@ class Body extends React.Component{
                     hasMore={this.state.hasMore}
                     loader={<h4>Loading...</h4>}
                     height={250}
+                    initialScrollY={0}
                     endMessage={
                             <p style={{ textAlign: "center" }}>
                             <b>Yay! You have seen it all</b>
                             </p>
                         }
-                    >
+                >
+                    
                     {
-                        this.state.items.task_list.map((i, row) => (
-                            <div style={style} key={row}>
-                                Data row: {row}
+                        Object.values(this.state.items.task_list).map((row) => (
+                            <div className = "row">
+                                { 
+                                    Object.values(row).map((val) => (
+                                        <div>{val}</div>
+                                    ))
+                                }                                
                             </div>
-                    ))}
+                            
+                        ))
+                    }
+                    
                 </InfiniteScroll>
             </div>
         </div>
