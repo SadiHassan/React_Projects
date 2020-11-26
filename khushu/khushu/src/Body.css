@@ -1,14 +1,25 @@
-.body {
+.body__container {
+    display: flex;
     width: 80%;
-    height: auto;
+    height: 70vh;
     margin-left: 10%;
-    margin-top: 5px;
-    background-color: rgb(204, 212, 212);
+    margin-top: 5%;
+    background-color: rgb(66, 67, 68);
 }
 
+/* .body__container__left */
 .salat__table {
-    width: 50%;
+    flex: 0.1;
+    min-width: 420px;
+    height: 67vh;
     background-color: rgb(243, 239, 239);
+}
+
+.body__container__right{
+    display: flex;
+    flex: 0.9;
+    flex-direction: column;
+    margin-left: 5%;
 }
 
 .row {
@@ -19,4 +30,29 @@
     margin: 1;
     padding: 0;
     width: 400px
+}
+
+.cell__small {
+    margin: 1px;
+    border: 2px solid black;
+    width: 10%;
+}
+
+.cell__large {
+    margin: 1px;
+    border: 2px solid rgb(6, 150, 37);
+    width: 20%;
+    display: flex;
+    justify-content: center;
+}
+
+.github__grid {
+    background-color: lightskyblue;
+    height: 75%;   
+}
+
+.motivational__quotes {
+    margin-top: 5px;
+    background-color: rgb(192, 224, 243);   
+    height: 20%;
 }
