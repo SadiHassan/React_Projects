@@ -1,4 +1,5 @@
 import React from "react";
+import ReactDOM from "react-dom";
 import { render } from "react-dom";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Data from "./Data";
@@ -17,17 +18,20 @@ class Body extends React.Component {
 
   componentDidMount() {
     document.addEventListener("mousedown", this.handleClickOutside);
+    //this.addTask()
   }
   componentWillUnmount() {
     document.removeEventListener("mousedown", this.handleClickOutside);
   }
 
   handleClickOutside = event => {
+    /*
     if (this.container.current && !this.container.current.contains(event.target)) {
       this.setState({
         open: false,
       });
     }
+    */
   };
 
   /*
@@ -56,8 +60,18 @@ class Body extends React.Component {
   };
 
   addTask = (e) => {
-    //alert("Cell clicked!");
-    console.log(e.target.id)
+    
+    const id = e.target.id + 'ul'
+    //console.log(id)
+    console.log(this.container.current)
+    //this.container.current.className = 'hide'
+
+    var node = ReactDOM.findDOMNode(this.container.current);
+    node.classList.toggle('hide');
+    console.log(this.container.current)
+
+    //document.getElementById(id).style.color = 'blue'
+    //ReactDOM.render(<p>Hallo</p>, document.getElementById(id));
     this.setState((state) => {
       return {
         open: !state.open,
@@ -88,24 +102,14 @@ class Body extends React.Component {
               <div className="row">
                 {Object.values(row).map((val, key) =>
                   key % 7 < 2 ? (
-                    <div className="cell__large">{val}</div>
+                    <div key={row[0]+key} className="cell__large">{val}</div>
                   ) : (
-                    <div className="cell__small">
-                      <button onClick={this.addTask} ref={this.container} id={this.state.id}>{val}</button>
-                      {
-                          
-                        this.state.id += 1
-                          
-                      }
-                      
-                      {this.state.open && (
-                        <ul>
-                          <li>Option 1</li>
-                          <li>Option 2</li>
-                          <li>Option 3</li>
-                          <li>Option 4</li>
+                    <div key={row[0]+key} onClick={this.addTask} id={row[0]+key} className="cell__small" ref={this.container}>
+                        <ul id={row[0]+key+'ul'} className="list_hidden" >
+                          <li key={1}>Option 1</li>
+                          <li key={2}>Option 2</li>
                         </ul>
-                      )}
+                      
                     </div>
                   )
                 )}
