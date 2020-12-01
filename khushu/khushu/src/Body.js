@@ -63,12 +63,12 @@ class Body extends React.Component {
     
     const id = e.target.id + 'ul'
     //console.log(id)
-    console.log(this.container.current)
+    //console.log(this.container.current)
     //this.container.current.className = 'hide'
 
     var node = ReactDOM.findDOMNode(this.container.current);
     node.classList.toggle('hide');
-    console.log(this.container.current)
+    console.log(this.container)
 
     //document.getElementById(id).style.color = 'blue'
     //ReactDOM.render(<p>Hallo</p>, document.getElementById(id));
@@ -100,16 +100,16 @@ class Body extends React.Component {
           >
             {Object.values(this.state.items.task_list).map((row) => (
               <div className="row">
-                {Object.values(row).map((val, key) =>
-                  key % 7 < 2 ? (
-                    <div key={row[0]+key} className="cell__large">{val}</div>
+                {Object.values(row).map((val, k) =>
+                  k % 7 < 2 ? (
+                    <div key={row[0]+k} className="cell__large">{val}</div>
                   ) : (
-                    <div key={row[0]+key} onClick={this.addTask} id={row[0]+key} className="cell__small" ref={this.container}>
-                        <ul id={row[0]+key+'ul'} className="list_hidden" >
+                    <div key={row[0]+(k)} onClick={this.addTask}  className="cell__small" ref={this.container}>
+                        {/*<ul id={row[0]+(k)+'ul'} className="list_hidden" >
                           <li key={1}>Option 1</li>
                           <li key={2}>Option 2</li>
-                        </ul>
-                      
+                        </ul>*/}
+                      {k}
                     </div>
                   )
                 )}

@@ -38,9 +38,10 @@
     margin: 1px;
     border: 2px solid black;
     width: 10%;
+    color: black;
 }
 
-.hide {
+.cell__small.hide {
     border: 2px solid red;
 }
 
