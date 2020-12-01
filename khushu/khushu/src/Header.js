@@ -12,6 +12,7 @@ function Header() {
     const navToggle = () => { 
       let navToggle2 = document.querySelector(".nav__toggle");
       navWrapper = document.querySelector(".nav__wrapper");
+      
       if (navWrapper.classList.contains("active")) {
         navToggle2.setAttribute("aria-expanded", "false");
         navToggle2.setAttribute("aria-label", "menu");
