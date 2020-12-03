@@ -1,0 +1,40 @@
+.cell__date {
+    background-color: rgb(230, 210, 187);
+    padding: 2px;
+    border: 1px solid gray;
+}
+
+.cell__day {
+    background-color: rgb(247, 244, 203);
+    padding: 2px;
+    width: 50px;
+    text-align: center;
+    border: 1px solid gray;
+}
+
+.cell__completion {
+    background-color: rgb(123, 243, 193);
+    padding-left: 3px;
+    padding-right: 3px;
+    border: 1px solid gray;
+    width: 50px;
+    text-align: center;
+}
+
+.cell__completion:hover {
+    cursor: pointer;
+    background-color:  rgb(62, 201, 143);
+}
+
+.cell__completion_clicked {
+    background-color: rgb(33, 99, 153);
+    padding-left: 3px;
+    padding-right: 3px;
+    border: 1px solid gray;
+    width: 50px;
+    text-align: center;
+}
+
+.cell__completion_clicked:hover {
+    cursor: pointer;
+}

@@ -1,0 +1,26 @@
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width:25%;
+    height: 25%;
+    background: rgba(0, 0, 0, 0.0);
+  }
+  
+  .modal-main {
+    position:fixed;
+    background: white;
+    width: 15%;
+    height: auto;
+    top:50%;
+    left:20%;
+    transform: translate(-50%,-50%);
+  }
+  
+  .display-block {
+    display: block;
+  }
+  
+  .display-none {
+    display: none;
+  }

@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { render } from "react-dom";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Data from "./Data";
+import Cell from "./Cell";
 import "./Body.css";
 
 //function Body() {
@@ -100,19 +101,11 @@ class Body extends React.Component {
           >
             {Object.values(this.state.items.task_list).map((row) => (
               <div className="row">
-                {Object.values(row).map((val, k) =>
-                  k % 7 < 2 ? (
-                    <div key={row[0]+k} className="cell__large">{val}</div>
-                  ) : (
-                    <div key={row[0]+(k)} onClick={this.addTask}  className="cell__small" ref={this.container}>
-                        {/*<ul id={row[0]+(k)+'ul'} className="list_hidden" >
-                          <li key={1}>Option 1</li>
-                          <li key={2}>Option 2</li>
-                        </ul>*/}
-                      {k}
-                    </div>
+                {
+                  Object.values(row).map((val, k) =>
+                    <Cell props = {{val, k}}/>
                   )
-                )}
+                }
               </div>
             ))}
           </InfiniteScroll>
