@@ -13,7 +13,7 @@
 }
 
 .cell__completion {
-    background-color: rgb(123, 243, 193);
+    background-color: rgb(244, 248, 246);
     padding-left: 3px;
     padding-right: 3px;
     border: 1px solid gray;
@@ -23,11 +23,29 @@
 
 .cell__completion:hover {
     cursor: pointer;
-    background-color:  rgb(62, 201, 143);
+    background-color:  rgb(210, 210, 210);
 }
 
 .cell__completion_clicked {
     background-color: rgb(33, 99, 153);
+    padding-left: 3px;
+    padding-right: 3px;
+    border: 1px solid gray;
+    width: 50px;
+    text-align: center;
+}
+
+.cell__completion__dark__green{
+    background-color: rgb(18, 177, 65);
+    padding-left: 3px;
+    padding-right: 3px;
+    border: 1px solid gray;
+    width: 50px;
+    text-align: center;
+}
+
+.cell__completion__light__green{
+    background-color: rgb(131, 245, 165);
     padding-left: 3px;
     padding-right: 3px;
     border: 1px solid gray;

@@ -25,7 +25,7 @@ class Body extends React.Component {
     document.removeEventListener("mousedown", this.handleClickOutside);
   }
 
-  handleClickOutside = event => {
+  handleClickOutside = (event) => {
     /*
     if (this.container.current && !this.container.current.contains(event.target)) {
       this.setState({
@@ -61,15 +61,14 @@ class Body extends React.Component {
   };
 
   addTask = (e) => {
-    
-    const id = e.target.id + 'ul'
+    const id = e.target.id + "ul";
     //console.log(id)
     //console.log(this.container.current)
     //this.container.current.className = 'hide'
 
     var node = ReactDOM.findDOMNode(this.container.current);
-    node.classList.toggle('hide');
-    console.log(this.container)
+    node.classList.toggle("hide");
+    console.log(this.container);
 
     //document.getElementById(id).style.color = 'blue'
     //ReactDOM.render(<p>Hallo</p>, document.getElementById(id));
@@ -101,14 +100,21 @@ class Body extends React.Component {
           >
             {Object.values(this.state.items.task_list).map((row) => (
               <div className="row">
+                {Object.values(row).map((val, k) => (
+                  <Cell props={{ val, k , row}} />
+                ))
+                }
                 {
-                  Object.values(row).map((val, k) =>
-                    <Cell props = {{val, k}}/>
-                  )
+                  // This line tested that row value change inside Cell component is being persisted in the ROW array
+                  //console.log(row)
                 }
               </div>
             ))}
           </InfiniteScroll>
+          {
+            // This line tested that row value change inside Cell component is being persisted in the main 2D array!
+            //   console.log(this.state.items.task_list)
+          }
           <button>Save</button>
         </div>
         <div className="body__container__right">
