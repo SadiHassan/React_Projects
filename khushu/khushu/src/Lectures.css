@@ -1,0 +1,59 @@
+.lectures__container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: rgba(255, 255, 255, 0.99);
+}
+
+.lectures__type {
+    margin: auto;
+    margin-top: 5px;
+    background-color: rgb(214, 221, 231);
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+}                   
+
+.lectures__contents{
+    background-color: rgb(178, 190, 190);
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: auto;
+    margin-top: 5px;
+    justify-content: center;
+}
+                        
+.lectures__single {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+    font-size: 1.2rem;
+    min-width: 200px;
+    min-height: 200px;
+    background: #e2f0ef;
+    margin: 10px;
+    color: #51aaa3;
+    border-radius: 20px;
+    border: 10px solid rgba(164, 206, 245, 0.7);
+}
+
+.lectures__single:hover {
+    cursor: pointer;
+}
+
+.lectures__single  img {
+    width: 12rem; 
+    height: 11rem;
+    border-radius: 20px;
+    margin-left: 2.2rem;
+    /*margin: auto;*/
+    object-fit: cover;
+    position: relative;
+    object-fit: inherit;
+    /*align-self: flex-end;*/
+}
