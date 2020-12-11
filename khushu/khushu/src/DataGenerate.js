@@ -76,19 +76,88 @@ module.exports.getDates = function (beginDateStr, endDateStr) {
 this.getDates("2015-08-16", "2015-09-07");
 
 module.exports.DectoBinary = function (val) {
-  let valBinaryStr = (+val).toString(2)
-  console.log(valBinaryStr)
-  console.log(valBinaryStr.length) 
-}
+  let valBinaryStr = (+val).toString(2);
+  console.log(valBinaryStr);
+  console.log(valBinaryStr.length);
+};
 this.DectoBinary("9223372036854775807");
 this.DectoBinary("1152921504606846975");
 
 module.exports.binaryToDec = function (str) {
-  let valDecStr = parseInt(str, 2)
-  console.log(valDecStr)
-  //console.log(valBinaryStr.length) 
-}
+  let valDecStr = parseInt(str, 2);
+  console.log(valDecStr);
+  //console.log(valBinaryStr.length)
+};
 
-this.binaryToDec("111011101111101110111110111011111011101111101110111110111011")
+this.binaryToDec(
+  "111011101111101110111110111011111011101111101110111110111011"
+);
 
+module.exports.isLeapYear = function () {
+  const date = new Date();
+  let currentYear = date.getFullYear();
+  if (
+    (currentYear % 4 == 0 && currentYear % 100 != 0) ||
+    currentYear % 400 == 0
+  )
+    return true;
+  return false;
+};
 
+module.exports.viewToData = function (viewArr) {};
+
+module.exports.createNewUserData = function () {
+  let dataArrDB = Array();
+  let dataArrView = Array();
+  let dataLength = 62;
+  let dataStreamLength = 60;
+  for (let i = 0; i < dataLength; i++) {
+    let temp = Math.random() * Math.pow(2, 60);
+    console.log(temp);
+    dataArrDB.push(temp); // each number is 8 byte integer
+  }
+
+  // At this point create a user collection with 'username+currentYear'
+  // Save this array to the collection. The collection might have other information, like, username, password etc...
+
+  for (let i = 0; i < dataLength; i++) {
+    let val = dataArrDB[i];
+    let valBinaryStr = (+val).toString(2);
+    while (valBinaryStr.length < dataStreamLength)
+      valBinaryStr = "0" + valBinaryStr;
+    dataArrView.push(valBinaryStr);
+  }
+  console.log(dataArrView);
+  console.log(dataArrView.length);
+  console.log(dataArrView[0].length);
+
+  let dataArrViewFinal = Array();
+  let dataChunk = 5;
+  let daysOfYear = 365;
+
+  if (this.isLeapYear()) daysOfYear++;
+
+  for (let i = 0; i < dataArrView.length / 2; i++) {
+    let j = 0;
+    while (j < dataArrView[0].length) {
+      let ontime = dataArrView[i].substring(j, j + dataChunk);
+      let late = dataArrView[i + 31].substring(j, j + dataChunk);
+      let finalString = "";
+      for (k = 0; k < ontime.length; k++) {
+        if (ontime[k] == "1") finalString += "2";
+        else if (late[k] == "1") finalString += "1";
+        else finalString += "0";
+      }
+      dataArrViewFinal.push(finalString);
+      daysOfYear--;
+      if (daysOfYear < 1) break;
+      j += dataChunk;
+    }
+    if (daysOfYear < 1) break;
+  }
+  console.log(dataArrViewFinal);
+  console.log(dataArrViewFinal.length);
+  console.log(dataArrViewFinal[0].length);
+};
+
+this.createNewUserData();
