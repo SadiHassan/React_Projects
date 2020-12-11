@@ -74,3 +74,21 @@ module.exports.getDates = function (beginDateStr, endDateStr) {
 };
 
 this.getDates("2015-08-16", "2015-09-07");
+
+module.exports.DectoBinary = function (val) {
+  let valBinaryStr = (+val).toString(2)
+  console.log(valBinaryStr)
+  console.log(valBinaryStr.length) 
+}
+this.DectoBinary("9223372036854775807");
+this.DectoBinary("1152921504606846975");
+
+module.exports.binaryToDec = function (str) {
+  let valDecStr = parseInt(str, 2)
+  console.log(valDecStr)
+  //console.log(valBinaryStr.length) 
+}
+
+this.binaryToDec("111011101111101110111110111011111011101111101110111110111011")
+
+
