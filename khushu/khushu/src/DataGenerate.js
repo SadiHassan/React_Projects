@@ -90,7 +90,7 @@ module.exports.binaryToDec = function (str) {
 };
 
 this.binaryToDec(
-  "111011101111101110111110111011111011101111101110111110111011"
+  "11"
 );
 
 module.exports.isLeapYear = function () {
