@@ -24,9 +24,6 @@ const Data = {"task_list":[
 }
 
 
-export const generateDates = () => {
-    console.log('hi')
-}
 
 
 
